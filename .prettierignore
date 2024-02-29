@@ -1,0 +1,4 @@
+# Ignore artifacts:
+build
+package.json
+package-look.json
