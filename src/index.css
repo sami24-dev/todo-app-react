@@ -5,3 +5,25 @@
 .app {
   @apply flex flex-col justify-start items-center md:dark:bg-[url('/src/images/bg-desktop-dark.jpg')] dark:bg-[url('/src/images/bg-mobile-dark.jpg')] bg-[url('/src/images/bg-mobile-light.jpg')] md:bg-[url('/src/images/bg-desktop-light.jpg')] bg-no-repeat bg-contain bg-VeryLightGrayishBlue dark:bg-VeryDarkBlue w-full h-full transition-all duration-500 ease-in-out;
 }
+ul {
+  scrollbar-color: #9394a5 transparent;
+  scrollbar-width: thin;
+}
+.input {
+  appearance: none;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: solid 1px #9394a5;
+  cursor: pointer;
+  background-image: url(../../images/cheque1.png);
+}
+input:checked {
+  background-image: url(../../images/cheque1.png);
+  background-size: contain;
+}
+span {
+  max-width: 300px; /* ajusta el ancho máximo según tus necesidades */
+  overflow-wrap: break-word;
+}
