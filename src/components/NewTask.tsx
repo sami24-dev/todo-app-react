@@ -16,11 +16,11 @@ function NewTask() {
     setTask({
       ...task,
       id: Math.random(),
-      task: value.trim()
+      task: value
     })
   }
   const handleSubmit = () => {
-    if (task.task !== '') {
+    if (task.task !== '' && task.task.trim()) {
       addTask(task)
       setTask({ ...task, task: '' })
     }
