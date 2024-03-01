@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .app {
-  @apply flex flex-col justify-start items-center md:dark:bg-[url('/src/images/bg-desktop-dark.jpg')] dark:bg-[url('/src/images/bg-mobile-dark.jpg')] bg-[url('/src/images/bg-mobile-light.jpg')] md:bg-[url('/src/images/bg-desktop-light.jpg')] bg-no-repeat bg-contain bg-VeryLightGrayishBlue dark:bg-VeryDarkBlue w-full h-full transition-all duration-500 ease-in-out;
+  @apply flex flex-col justify-start items-center bg-[url('/src/images/bg-mobile-light.jpg')] dark:bg-[url('/src/images/bg-mobile-dark.jpg')] md:bg-[url('/src/images/bg-desktop-light.jpg')] md:dark:bg-[url('/src/images/bg-desktop-dark.jpg')] bg-no-repeat bg-contain bg-VeryLightGrayishBlue dark:bg-VeryDarkBlue w-full lg:h-full h-screen transition-all duration-500 ease-in-out;
 }
 ul {
   scrollbar-color: #9394a5 transparent;
@@ -19,7 +19,7 @@ ul {
   cursor: pointer;
   background-image: url(../../images/cheque1.png);
 }
-input:checked {
+.input:checked {
   background-image: url(../../images/cheque1.png);
   background-size: contain;
 }
