@@ -6,7 +6,6 @@ const TaskContext = createContext<TodoContextType | undefined>(undefined)
 export function TaskProvider({ children }: { children: ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>([])
   const [filterTasks, setFilterTasks] = useState<Task[]>([])
-  //console.log(tasks, filterTasks)
   const addTask = (task: Task) => {
     setTasks([...tasks, task])
     setFilterTasks([...filterTasks, task])
@@ -29,17 +28,14 @@ export function TaskProvider({ children }: { children: ReactNode }) {
   const allTask = () => {
     const updatedTasks = tasks.filter((task) => task)
     setFilterTasks(updatedTasks)
-    console.log(updatedTasks)
   }
   const activeTask = () => {
     const updatedTasks = tasks.filter((task) => task.completed === false)
     setFilterTasks(updatedTasks)
-    console.log(updatedTasks)
   }
   const completedTask = () => {
     const updatedTasks = tasks.filter((task) => task.completed === true)
     setFilterTasks(updatedTasks)
-    console.log(updatedTasks)
   }
   const clearTask = () => {
     const updatedTasks = tasks.filter((task) => task.completed !== true)

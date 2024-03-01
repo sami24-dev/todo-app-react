@@ -16,7 +16,7 @@ function TodoList() {
               <button onClick={() => {
                 toggleTask(task.id)
               }} className='size-5 rounded-full border border-VeryDarkGrayishBlue ' >
-                {task.completed && (<img className='size-5 w-full' src={Check} alt="Check" />)}
+                {task.completed && <img className='size-5 w-full' src={Check} alt="Check" />}
               </button>
               <span>{task.task}</span>
             </div>
