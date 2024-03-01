@@ -5,10 +5,23 @@
 .app {
   @apply flex flex-col justify-start items-center bg-[url('/src/images/bg-mobile-light.jpg')] dark:bg-[url('/src/images/bg-mobile-dark.jpg')] md:bg-[url('/src/images/bg-desktop-light.jpg')] md:dark:bg-[url('/src/images/bg-desktop-dark.jpg')] bg-no-repeat bg-contain bg-VeryLightGrayishBlue dark:bg-VeryDarkBlue w-full lg:h-full h-screen transition-all duration-500 ease-in-out;
 }
+.contain-task {
+  @apply flex flex-col justify-start items-center w-full rounded-md bg-VeryLightGray dark:bg-VeryDarkDesaturatedBlue relative min-h-80 max-h-96 transition-colors duration-500 ease-in-out
+}
+.todo-task {
+  @apply w-[300px] md:w-[420px] lg:w-[500px] rounded-t-md overflow-y-auto overflow-x-hidden relative pb-2 text-VeryDarkGrayishBlue dark:text-DarkGrayishBlue transition-colors duration-500 ease-in-out
+}
+.task {
+  @apply flex justify-between items-center w-full h-12 lg:h-16 p-4 font-medium border-b-[0.05rem] dark:border-b-VeryDarkGrayishBlue dark:hover:border-none dark:hover:shadow-md dark:hover:shadow-DarkGrayishBlue rounded-t-md hover:shadow-lg transition-all
+}
+.check {
+  @apply size-5 rounded-full border border-VeryDarkGrayishBlue 
+}
 ul {
   scrollbar-color: #9394a5 transparent;
   scrollbar-width: thin;
 }
+
 .input {
   appearance: none;
   background-color: transparent;

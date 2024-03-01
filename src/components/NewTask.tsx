@@ -26,7 +26,7 @@ function NewTask() {
     }
   }
   return (
-    <article className='flex justify-between items-center w-full mb-8 lg:mb-12'>
+    <article className='flex justify-between items-center w-full mb-8 lg:mb-10'>
       <div className='w-[300px] md:w-[420px] lg:w-[500px] relative'>
         <input
           className='w-full h-12 lg:h-16 pl-4 text-base dark:bg-VeryDarkDesaturatedBlue text-VeryDarkDesaturatedBlue dark:text-DarkGrayishBlue font-medium outline-none appearance-none rounded-md transition-colors duration-500 ease-in-out'
