@@ -9,7 +9,7 @@ function App() {
         <NewTask />
         <TodoList />
       </main>
-      <footer className='flex flex-col items-center px-20 pt-20 pb-10 md:pt-10'>
+      <footer className='invisible flex flex-col items-center px-20 pt-20 pb-10 md:pt-10'>
         <span className='text-xs text-DarkGrayishBlue mb-5'>
           Drag and drop to reader list
         </span>
