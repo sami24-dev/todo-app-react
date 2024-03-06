@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useState } from 'react'
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react'
 import { Task, TodoContextType } from '../model/Model'
 
 const TaskContext = createContext<TodoContextType | undefined>(undefined)
@@ -6,9 +6,19 @@ const TaskContext = createContext<TodoContextType | undefined>(undefined)
 export function TaskProvider({ children }: { children: ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>([])
   const [filterTasks, setFilterTasks] = useState<Task[]>([])
+  const taskStorage: Task[] = JSON.parse(localStorage.getItem('listTask') || '[]')
+
+  useEffect(() => {
+    setTasks(taskStorage)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('listTask', JSON.stringify(tasks))
+    setFilterTasks(tasks)
+  }, [tasks])
+
   const addTask = (task: Task) => {
     setTasks([...tasks, task])
-    setFilterTasks([...filterTasks, task])
   }
   const toggleTask = (id: number): void => {
     const updatedTasks = tasks.map((task) => {
@@ -18,23 +28,17 @@ export function TaskProvider({ children }: { children: ReactNode }) {
       return task
     })
     setTasks(updatedTasks)
-    setFilterTasks(updatedTasks)
   }
   const removeTask = (id: number) => {
     const updatedTasks = tasks.filter((task) => task.id !== id)
     setTasks(updatedTasks)
-    setFilterTasks(updatedTasks)
   }
   const allTask = () => {
     const updatedTasks = tasks.filter((task) => task)
     setFilterTasks(updatedTasks)
   }
-  const activeTask = () => {
-    const updatedTasks = tasks.filter((task) => task.completed === false)
-    setFilterTasks(updatedTasks)
-  }
-  const completedTask = () => {
-    const updatedTasks = tasks.filter((task) => task.completed === true)
+  const stateTask = (state: boolean) => {
+    const updatedTasks = tasks.filter((task) => task.completed === state)
     setFilterTasks(updatedTasks)
   }
   const clearTask = () => {
@@ -43,7 +47,7 @@ export function TaskProvider({ children }: { children: ReactNode }) {
     setFilterTasks(updatedTasks)
   }
   return (
-    <TaskContext.Provider value={{ tasks, filterTasks, addTask, toggleTask, removeTask, allTask, activeTask, completedTask, clearTask }}>
+    <TaskContext.Provider value={{ tasks, filterTasks, addTask, toggleTask, removeTask, allTask, stateTask, clearTask }}>
       {children}
     </TaskContext.Provider>
   )

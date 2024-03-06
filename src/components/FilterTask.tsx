@@ -1,7 +1,7 @@
 import { useTodo } from "../context/TaskContext"
 
 function FilterTask() {
-  const { filterTasks, allTask, activeTask, completedTask, clearTask } = useTodo()
+  const { filterTasks, allTask, stateTask, clearTask } = useTodo()
   const state = filterTasks
   return (
     <div className='flex justify-between p-4 md:p-5 mt-auto rounded-md bg-VeryLightGray dark:bg-VeryDarkDesaturatedBlue text-sm text-DarkGrayishBlue w-full transition-colors duration-500 ease-in-out'>
@@ -11,10 +11,10 @@ function FilterTask() {
           allTask()
         }}>All</button>
         <button onClick={() => {
-          activeTask()
+          stateTask(false)
         }}>Active</button>
         <button onClick={() => {
-          completedTask()
+          stateTask(true)
         }}>Completed</button>
       </div>
       <button onClick={() => {

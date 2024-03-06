@@ -7,7 +7,7 @@ function TodoList() {
     <article className='contain-task'>
       <ul className='todo-task'>
         {filterTasks.map((task) => (
-          <ItemTask task={task} />
+          <ItemTask key={task.id} task={task} />
         ))}
       </ul>
       <FilterTask />
